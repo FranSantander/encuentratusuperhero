@@ -1,0 +1,19 @@
+Api:
+https://superheroapi.com/api.php/1849072248623588/1
+
+datos de la gráfica:
+durability: powerstats.durability
+speed: powerstats.speed
+power: powerstats.power
+combat: powerstats.combat
+strength: powerstats.strength
+intelligence: powerstats.intelligence
+
+datos tarjeta:
+nombre: name
+ocupación: work.occupation
+primera aparición: biography.first-appearance
+altura: appearance.height
+peso: appearance.weight
+alianzas: connections.group-affiliation
+

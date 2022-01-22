@@ -16,64 +16,74 @@
 <body>
     <!--Navbar-->
     <!-- Image and text -->
-    <nav id="navbar" class="navbar navbar-light bg-dark">
-        
-        <a class="navbar-brand text-white" href="#navbar">
+    <nav class="navbar navbar-light bg-dark fixed-top">
+        <a class="navbar-brand text-white" href="#imagen">
             <img src="./assets/img/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="icono">
             SuperHero
         </a>
-       
     </nav>
 
     <!--Imagen 1-->
-    <img src="./assets/img/sh1.jpg" class="mx-auto d-block my-4" alt="sh1">
+    <img src="./assets/img/sh1.jpg" id="imagen" class="mx-auto d-block my-4" alt="sh1">
 
     <!--Título-->
-<header class="container">
-    <div class="container text-left pt-1">
-    <h1>Encuentra tu SuperHero</h1>
-    </div>
-</header>
+    <header class="container">
+        <div class="container text-left pt-1">
+            <h1>Encuentra tu SuperHero</h1>
+        </div>
+    </header>
     <!--Formulario-->
     <section>
         <form>
             <div class="row m-auto container pt-1">
                 <div class="form-group col-12 col-sm-6">
                     <label>Ingresa el número del superheroe a buscar</label>
-                    <input class="form-control" id="numero">
+                    <input class="form-control" id="numeroHeroe">
                 </div>
             </div>
-            <div class="container pl-4">
-            <button id="btn" class="btn btn-primary mx-auto my-1">Buscar</button>
-        </div>
+            <div class="container">
+                <button id="btn" class="btn btn-primary d-flex justify-content-between ml-3">Buscar</button>
+            </div>
         </form>
-        
+
     </section>
 
-    <!--Imprimir tarjeta héreo-->
-    <div class="card mb-3" style="max-width: 540px;">
-        <div id="heroeInfo" class="row no-gutters">
-            <div class="col-md-4">
-                <img src="..." alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <!--Imprimir héroe-->
+    <section>
+        <div class="row m-auto container pt-5">
+            <div class="col-12 col-sm-6 " style="max-width: 540px;">
+                <p class="col align-self-end">SuperHero Encontrado</p>
+                <div class="card mb-8">
+                    <div id="heroeInfo" class="row no-gutters">
+                        <div class="col-12 col-sm-6">
+                            <img src="...">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to
+                                    additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+                <div class="col-12 col-sm-6" 
+                id="heroeStats" 
+                style="height: 300px; width: auto;"></div>
             </div>
         </div>
-    </div>
-
+    </section>
 
 
 
     <!--Conectores-->
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+   
     <script src="https://code.jquery.com/jquery-3.6.0.js"
-    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 
 </body>
