@@ -16,11 +16,12 @@ $(document).ready(function () {
                 let altura = data.appearance.height;
                 let peso = data.appearance.weight;
                 let alianzas = data.connections.group_affiliation;
+                let valorPoderes = data.powerstats;
 
                 $("#heroeInfo").html(`
                 <p>SuperHero Encontrado:</p>
                 <div class="card text-justificy" style="width: 18rem;">
-                    <img src="${imagen}" class="card-img-left">
+                    <img src="${imagen}">
                 <div class="card-body">
                  <h5 class="card-title">Nombre: ${nombre}</h5>
                 <p class="card-text">Conexiones: ${conexiones}</p>
@@ -36,16 +37,39 @@ $(document).ready(function () {
             </div>
           </div>
             `);
-                let estadisticas = []
-                 data.powerStats.forEach(function (s) {
-                     estadisticas.push({
-                         label: s.powerstats.intelligence,
-                         y: s.powerstats,
+             /*let nombresPoderes = ["intelligence", "strength", "speed", "durability", "power", "combat"];
+            for (let i = 0; i < valorPoderes.length; i++) { 
+            document.write (nombresPoderes[i]);
+        };*/
+         
+      let estadisticas2;
+            for (let i = 0; i < valorPoderes.length; i++) {
+                estadisticas2 = `${valorPoderes}`;
+            }
+                /*let estadisticas1 = []
+                 data.powerStats.forEach(function (h) {
+                     estadisticas1.push({
+                         label: h.powerstats,
+                         y: h.name,
                      })
                  });
+
+                 let poderes = {
+                    "intelligence": "",
+                    "strength": "",
+                    "speed": "",
+                    "durability": "",
+                    "power": "",
+                    "combat": ""
+                    
+                 }
+                 for (propiedad in poderes){
+
+                    }*/
+                
                  let config = {
+                    
                      theme: "light2", // "light1", "light2", "dark1", "dark2"
-                     exportEnabled: true,
                      animationEnabled: true,
                      title: {
                          text: "Estadísticas de poder para " + nombre
@@ -58,20 +82,20 @@ $(document).ready(function () {
                          legendText: "{label}",
                          indexLabelFontSize: 16,
                          indexLabel: "{label} - {y}%",
-                         dataPoints: [ estadisticas,
-                             /*{ y: estadisticas, label: "durability" },
-                             { y: estadisticas, label: "speed" },
-                             { y: estadisticas, label: "power" },
-                             { y: estadisticas, label: "combat" },
-                             { y: estadisticas, label: "strength" },
-                         { y: estadisticas, label: "intelligence"}*/
+                         dataPoints: [ /*estadisticas,*/
+                             { y: valorPoderes , label:"intelligence" },
+                             { y: valorPoderes, label: "strength" },
+                             { y: valorPoderes, label: "speed" },
+                             { y: valorPoderes, label: "durability" },
+                             { y: valorPoderes, label: "power" },
+                            { y: valorPoderes, label: "combat" }
                  ]
              }]
          };
          let chart = new CanvasJS.Chart("chartContainer", config);
          chart.render();
 
-                /*function toggleDataSeries (e) {
+              /* function toggleDataSeries (e) {
                 if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible){
                     e.dataSeries.visible = false;
                 }else {
